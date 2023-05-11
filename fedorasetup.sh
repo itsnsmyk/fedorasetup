@@ -8,8 +8,6 @@ sudo dnf install axel
 #dnfconfig
 
 echo 'Making some necessary changes in dnf config'
- 
-git clone https://github.com/itsnsmyk/fedorasetup.git
 cd fedorasetup/ && sudo cp -a dnf.conf /etc/dnf/dnf.conf
 
 
@@ -40,8 +38,12 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 #Apps
 
+#Tg
+
 echo 'Installing Telegram Desktop'
 axel -n 10 https://telegram.org/dl/desktop/linux
+
+#Brave
 
 echo 'Installing Brave Browser'
 sudo dnf install dnf-plugins-core
@@ -52,6 +54,13 @@ sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 sudo dnf install brave-browser
 
+#QEMU
+
+echo 'Installing QEMU'
+
+sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils virt-manager libvirt-devel virt-top libguestfs-tools guestfs-tools
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
 
 #autocpufreq 
 
