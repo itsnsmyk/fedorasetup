@@ -1,5 +1,9 @@
 echo 'Welcome to Fedora Setup made by NSM'
 
+echo 'Updating the system'
+
+sudo dnf --refresh upgrade;
+
 echo 'Now we will install all the necessary things for setting up Fedora'
 
 #axel_git
@@ -67,21 +71,16 @@ echo 'Installing QEMU'
 
 sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils virt-manager libvirt-devel virt-top libguestfs-tools guestfs-tools && sudo systemctl start libvirtd && sudo systemctl enable libvirtd;
 
-#Brave
-
-echo 'Installing Brave Browser'
-sudo dnf install -y dnf-plugins-core && sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo && sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc;
-sudo dnf install -y brave-browser --allowerasing;
-
-
 
 #autocpufreq 
 
 echo 'Installing auto-cpufreq'
 
 git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-cd auto-cpufreq && sudo ./auto-cpufreq-installer
+cd auto-cpufreq && sudo ./auto-cpufreq-installer && cd .. ;
 
-sleep 10s;
+sync
+
+sleep 40s;
 echo 'Your Computer will Reboot in 10 seconds from now'
 sudo reboot
