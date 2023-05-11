@@ -42,6 +42,10 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 #Apps
 
+#filemanager
+
+sudo dnf install nemo;
+
 #Tg
 
 echo 'Installing Telegram Desktop'
@@ -58,12 +62,18 @@ sudo dnf install -y codium;
 axel -n 10 https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11698/wps-office-11.1.0.11698.XA-1.x86_64.rpm;
 sudo rpm -i wps-office-11.1.0.11698.XA-1.x86_64.rpm;
 
+#Email_Client
+axel -n 10 https://updates.getmailspring.com/download?platform=linuxRpm;
+sudo rpm -i mailspring-1.10.8-0.1.x86_64.rpm;
+
 #Obsidian
 axel -n 10 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage && sudo chmod +x Obsidian-1.2.8.AppImage;
 
 #Alacritty
-
 sudo dnf install -y alacritty;
+
+#Fetch
+sudo dnf install fastfetch;
 
 #QEMU
 
@@ -72,6 +82,17 @@ echo 'Installing QEMU'
 sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils virt-manager libvirt-devel virt-top libguestfs-tools guestfs-tools && sudo systemctl start libvirtd && sudo systemctl enable libvirtd;
 
 
+#ncspot(terminal spotify)
+
+echo 'Installing ncspot'
+sudo dnf install -y dbus-devel libxcb-devel ncurses-devel openssl-devel pulseaudio-libs-devel;
+sudo dnf install -y cargo;
+cargo install ncspot;
+
+#small_apps
+
+sudo dnf install -y okular mpv flameshot 
+
 #autocpufreq 
 
 echo 'Installing auto-cpufreq'
@@ -79,8 +100,9 @@ echo 'Installing auto-cpufreq'
 git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq && sudo ./auto-cpufreq-installer && cd .. ;
 
+
 sync
 
 sleep 40s;
-echo 'Your Computer will Reboot in 10 seconds from now'
+echo 'Your Computer will Reboot in 40 seconds from now'
 sudo reboot
