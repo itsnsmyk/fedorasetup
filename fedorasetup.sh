@@ -21,9 +21,8 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 
 echo 'Installing Necessary Codecs'
 
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-&&
-sudo dnf groupupdate multimedia sound-and-video
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing;
+sudo dnf groupupdate multimedia sound-and-video;
 
 #For_Intel
 #sudo dnf install libva-intel-driver
