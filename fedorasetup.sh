@@ -22,6 +22,7 @@ sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-releas
 echo 'Installing Necessary Codecs'
 
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+&&
 sudo dnf groupupdate multimedia sound-and-video
 
 #For_Intel
@@ -41,25 +42,25 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 #Tg
 
 echo 'Installing Telegram Desktop'
-axel -n 10 https://telegram.org/dl/desktop/linux
+axel -n 10 https://telegram.org/dl/desktop/linux && mv linux telegram.xz
 
 #Brave
 
 echo 'Installing Brave Browser'
-sudo dnf install dnf-plugins-core
-
-sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-
+sudo dnf install -y dnf-plugins-core && sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo 
+&& 
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-
-sudo dnf install brave-browser
+&&
+sudo dnf install -y brave-browser
 
 #QEMU
 
 echo 'Installing QEMU'
 
 sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils virt-manager libvirt-devel virt-top libguestfs-tools guestfs-tools
+&&
 sudo systemctl start libvirtd
+&&
 sudo systemctl enable libvirtd
 
 #autocpufreq 
