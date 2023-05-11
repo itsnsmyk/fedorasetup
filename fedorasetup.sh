@@ -8,7 +8,7 @@ sudo dnf install axel
 #dnfconfig
 
 echo 'Making some necessary changes in dnf config'
-cd fedorasetup/ && sudo cp -a dnf.conf /etc/dnf/dnf.conf
+sudo cp -a dnf.conf /etc/dnf/dnf.conf
 
 
 #RPMFUSION
