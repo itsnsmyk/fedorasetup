@@ -56,7 +56,7 @@ axel -n 10 https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/116
 sudo rpm -i wps-office-11.1.0.11698.XA-1.x86_64.rpm;
 
 #Obsidian
-axel -n 10 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage;
+axel -n 10 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage && sudo chmod +x Obsidian-1.2.8.AppImage;
 
 #Alacritty
 
