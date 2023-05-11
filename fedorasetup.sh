@@ -42,26 +42,39 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 #Tg
 
 echo 'Installing Telegram Desktop'
-axel -n 10 https://telegram.org/dl/desktop/linux && mv linux telegram.xz
+axel -n 10 https://telegram.org/dl/desktop/linux && mv linux telegram.xz;
 
-#Brave
+#Codium
 
-echo 'Installing Brave Browser'
-sudo dnf install -y dnf-plugins-core && sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo 
-&& 
-sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
-&&
-sudo dnf install -y brave-browser
+sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg;
+printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo;
+sudo dnf install -y codium;
+
+#WPS
+
+axel -n 10 https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/11698/wps-office-11.1.0.11698.XA-1.x86_64.rpm;
+sudo rpm -i wps-office-11.1.0.11698.XA-1.x86_64.rpm;
+
+#Obsidian
+axel -n 10 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage;
+
+#Alacritty
+
+sudo dnf install -y alacritty;
 
 #QEMU
 
 echo 'Installing QEMU'
 
-sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils virt-manager libvirt-devel virt-top libguestfs-tools guestfs-tools
-&&
-sudo systemctl start libvirtd
-&&
-sudo systemctl enable libvirtd
+sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils virt-manager libvirt-devel virt-top libguestfs-tools guestfs-tools && sudo systemctl start libvirtd && sudo systemctl enable libvirtd;
+
+#Brave
+
+echo 'Installing Brave Browser'
+sudo dnf install -y dnf-plugins-core && sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo && sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc;
+sudo dnf install -y brave-browser --allowerasing;
+
+
 
 #autocpufreq 
 
@@ -70,4 +83,6 @@ echo 'Installing auto-cpufreq'
 git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq && sudo ./auto-cpufreq-installer
 
-
+sleep 10s;
+echo 'Your Computer will Reboot in 10 seconds from now'
+sudo reboot
