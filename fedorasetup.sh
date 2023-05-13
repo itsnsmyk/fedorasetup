@@ -11,8 +11,10 @@ sudo dnf install axel
 echo 'Making some necessary changes in dnf config'
 sudo cp -a dnf.conf /etc/dnf/dnf.conf
 
-#update
+#fedora3rdparty
+sudo dnf install fedora-workstation-repositories
 
+#update
 
 echo 'Updating the system'
 
@@ -83,6 +85,10 @@ sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils virt-manager libv
 
 echo 'Installing ncspot'
 flatpak install flathub io.github.hrkfdn.ncspot;
+
+#Spotify
+echo 'Installing Spotiy'
+sudo flatpak install flathub com.spotify.Client
 
 #small_apps
 
