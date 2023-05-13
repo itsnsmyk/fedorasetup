@@ -46,7 +46,7 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 #Tg
 
 echo 'Installing Telegram Desktop'
-wget -n 10 https://telegram.org/dl/desktop/linux && mv linux telegram.xz;
+wget https://telegram.org/dl/desktop/linux && mv linux telegram.xz;
 
 #Codium
 
@@ -64,7 +64,7 @@ wget https://updates.getmailspring.com/download?platform=linuxRpm && mv download
 sudo rpm -i mailspring.rpm;
 
 #Obsidian
-wget -n 10 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage && sudo chmod +x Obsidian-1.2.8.AppImage;
+wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage && sudo chmod +x Obsidian-1.2.8.AppImage;
 
 #Alacritty
 sudo dnf install -y alacritty;
