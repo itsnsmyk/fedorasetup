@@ -16,7 +16,7 @@ sudo cp -a fedora.repo /etc/yum.repos.d/fedora.repo
 sudo cp -a fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo
 
 #Selinux_Permmisive
-sudo cp -a config
+sudo cp -a config /etc/selinux/config
 
 #fedora3rdparty
 sudo dnf install fedora-workstation-repositories
