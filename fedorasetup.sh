@@ -1,8 +1,5 @@
 echo 'Welcome to Fedora Setup made by NSM'
 
-echo 'Updating the system'
-
-sudo dnf --refresh upgrade;
 
 echo 'Now we will install all the necessary things for setting up Fedora'
 
@@ -14,6 +11,12 @@ sudo dnf install axel
 echo 'Making some necessary changes in dnf config'
 sudo cp -a dnf.conf /etc/dnf/dnf.conf
 
+#update
+
+
+echo 'Updating the system'
+
+sudo dnf --refresh upgrade;
 
 #RPMFUSION
 
