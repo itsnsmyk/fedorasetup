@@ -103,6 +103,18 @@ git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq && sudo ./auto-cpufreq-installer;
 sudo auto-cpufreq --install;
 
+#Gaming
+#Steam
+sudo dnf install steam;
+
+#Protonup-qt
+
+git clone https://github.com/DavidoTek/ProtonUp-Qt.git && cd ProtonUp-Qt/ 
+pip3 install -r ./requirements.txt ;
+python3 -m pupgui2;
+
+
+
 sync
 
 
