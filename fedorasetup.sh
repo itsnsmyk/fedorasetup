@@ -1,7 +1,7 @@
 echo 'Welcome to Fedora Setup made by NSM'
 
 
-echo 'Now we will install all the necessary dnfthings for setting up Fedora'
+echo 'Now we will install all the necessary dnf things for setting up Fedora'
 
 #axel_git
 sudo dnf install axel
