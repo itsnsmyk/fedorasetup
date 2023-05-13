@@ -43,12 +43,6 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 #dnf copr enable xxmitsu/mesa-git
 
 
-#Apps
-
-#filemanager
-
-sudo dnf install nemo;
-
 #Tg
 
 echo 'Installing Telegram Desktop'
