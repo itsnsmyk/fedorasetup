@@ -12,6 +12,8 @@ echo 'Making some necessary changes in dnf config'
 sudo cp -a dnf.conf /etc/dnf/dnf.conf
 
 #best_speed_mirrors
+echo 'Best mirrors fr'
+
 sudo cp -a fedora.repo /etc/yum.repos.d/fedora.repo
 sudo cp -a fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo
 
@@ -104,12 +106,6 @@ sudo flatpak install flathub com.spotify.Client
 
 sudo dnf install -y okular mpv;
 
-#auto-cpufreq
-echo 'Enabling auto-cpufreq to save your battery'
-git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-cd auto-cpufreq/ && sudo ./auto-cpufreq-installer
-sudo auto-cpufreq --install
-
 #Gaming
 #Steam
 sudo dnf install steam;
@@ -120,8 +116,12 @@ git clone https://github.com/DavidoTek/ProtonUp-Qt.git && cd ProtonUp-Qt/
 pip3 install -r ./requirements.txt ;
 python3 -m pupgui2;
 
+#auto-cpufreq
+echo 'Enabling auto-cpufreq to save your battery'
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq/ && sudo ./auto-cpufreq-installer
+sudo auto-cpufreq --install
 
 
-sync
 
 
