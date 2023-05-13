@@ -44,6 +44,9 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 #echo 'Latest Mesa by xxmitsu copr'
 #dnf copr enable xxmitsu/mesa-git
 
+#Dragora
+
+sudo dnf install dnfdragora;
 
 #Tg
 
