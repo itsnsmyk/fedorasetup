@@ -11,6 +11,13 @@ sudo dnf install axel
 echo 'Making some necessary changes in dnf config'
 sudo cp -a dnf.conf /etc/dnf/dnf.conf
 
+#best_speed_mirrors
+sudo cp -a fedora.repo /etc/yum.repos.d/fedora.repo
+sudo cp -a fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo
+
+#Selinux_Permmisive
+sudo cp -a config
+
 #fedora3rdparty
 sudo dnf install fedora-workstation-repositories
 
