@@ -86,10 +86,8 @@ flatpak install flathub io.github.hrkfdn.ncspot;
 
 #small_apps
 
-sudo dnf install -y okular mpv
+sudo dnf install -y okular mpv;
 
 sync
 
-sleep 40s;
-echo 'Your Computer will Reboot in 40 seconds from now'
-sudo reboot
+
