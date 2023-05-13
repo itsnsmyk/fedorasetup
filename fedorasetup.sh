@@ -1,10 +1,12 @@
 echo 'Welcome to Fedora Setup made by NSM'
 
 
-echo 'Now we will install all the necessary things for setting up Fedora'
+echo 'Now we will install all the necessary dnfthings for setting up Fedora'
 
 #axel_git
 sudo dnf install axel
+sudo dnf install python3
+sudo dnf install python3-pip
 
 #dnfconfig
 
@@ -115,6 +117,7 @@ sudo dnf install steam;
 git clone https://github.com/DavidoTek/ProtonUp-Qt.git && cd ProtonUp-Qt/ 
 pip3 install -r ./requirements.txt ;
 python3 -m pupgui2;
+cd .. 
 
 #auto-cpufreq
 echo 'Enabling auto-cpufreq to save your battery'
