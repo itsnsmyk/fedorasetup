@@ -56,12 +56,12 @@ sudo dnf install -y codium;
 
 #OnlyOffice
 
-wget https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/download/v7.3.3/DesktopEditors-x86_64.AppImage;
+wget https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/download/v7.3.3/DesktopEditors-x86_64.AppImage && chmod +x DesktopEditors-x86_64.AppImage;
 
 
 #Email_Client
-wget https://updates.getmailspring.com/download?platform=linuxRpm;
-sudo rpm -i mailspring-1.10.8-0.1.x86_64.rpm;
+wget https://updates.getmailspring.com/download?platform=linuxRpm && mv download?platform=linuxRpm mailspring.rpm;
+sudo rpm -i mailspring.rpm;
 
 #Obsidian
 wget -n 10 https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage && sudo chmod +x Obsidian-1.2.8.AppImage;
