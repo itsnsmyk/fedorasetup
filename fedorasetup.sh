@@ -46,7 +46,7 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 #Tg
 
 echo 'Installing Telegram Desktop'
-axel -n 10 https://telegram.org/dl/desktop/linux && mv linux telegram.xz;
+wget -n 10 https://telegram.org/dl/desktop/linux && mv linux telegram.xz;
 
 #Codium
 
