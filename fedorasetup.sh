@@ -2,7 +2,7 @@ echo 'Welcome to Fedora Setup made by NSM'
 
 
 echo 'Now we will install all the necessary things for setting up Fedora'
-https://github.com/itsnsmyk/fedorasetup/edit/main/fedorasetup.sh
+
 #axel_git
 sudo dnf install axel
 
