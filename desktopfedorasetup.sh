@@ -4,9 +4,9 @@ echo 'Welcome to Fedora Setup made by NSM'
 echo 'Now we will install all the necessary dnf things for setting up Fedora'
 
 #axel_git
-sudo dnf install axel
-sudo dnf install python3
-sudo dnf install python3-pip
+sudo dnf install -y axel
+sudo dnf install -y python3
+sudo dnf install -y python3-pip
 
 #dnfconfig
 
@@ -23,7 +23,7 @@ sudo cp -a fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo
 sudo cp -a config /etc/selinux/config
 
 #fedora3rdparty
-sudo dnf install fedora-workstation-repositories
+sudo dnf install -y fedora-workstation-repositories
 
 #update
 
@@ -35,7 +35,7 @@ sudo dnf --refresh upgrade;
 
 echo 'Installing free & nonfree rpmfusion'
 
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 #Codecs
 
@@ -45,12 +45,12 @@ sudo dnf swap ffmpeg-free ffmpeg --allowerasing;
 sudo dnf groupupdate multimedia sound-and-video;
 
 #Tainted_Codecs
-sudo dnf install rpmfusion-nonfree-release-tainted
+sudo dnf install -y rpmfusion-nonfree-release-tainted
 sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 #Dragora
 
-sudo dnf install dnfdragora;
+sudo dnf install -y dnfdragora;
 
 #Tg
 
@@ -64,22 +64,20 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 sudo dnf install -y codium;
 
 #OnlyOffice
-
+echo 'Downloading Onlyoffice'
 wget https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/download/v7.3.3/DesktopEditors-x86_64.AppImage && chmod +x DesktopEditors-x86_64.AppImage;
 
-
-#Email_Client
-wget https://updates.getmailspring.com/download?platform=linuxRpm && mv download?platform=linuxRpm mailspring.rpm;
-sudo rpm -i mailspring.rpm;
-
 #Obsidian
+echo 'Getting Obsidian for ya'
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage && sudo chmod +x Obsidian-1.2.8.AppImage;
 
 #Alacritty
+echo 'Downloading the Best terminal alacritty' 
 sudo dnf install -y alacritty;
 
 #Fetch
-sudo dnf install fastfetch;
+echo 'Wanna fetch i gotchu Installing fastfetch'
+sudo dnf install -y fastfetch;
 
 #QEMU
 
@@ -97,14 +95,13 @@ flatpak install flathub io.github.hrkfdn.ncspot;
 echo 'Installing Spotiy'
 sudo flatpak install flathub com.spotify.Client
 
-#corectrl
-sudo dnf install corecctrl;
-
 #small_apps
-
+echo 'Installing few handy apps'
 sudo dnf install -y okular mpv;
 
-
+#corectrl
+echo 'Installing CoreCtrl'
+sudo dnf install corectrl;
 
 
 
