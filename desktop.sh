@@ -68,7 +68,7 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 sudo dnf install -y codium;
 
 #OnlyOffice
-echo 'Removing OnlyOffice'
+echo 'Removing LibreOffice'
 sudo dnf remove libreoffice*
 echo 'Downloading Onlyoffice'
 wget https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/download/v7.3.3/DesktopEditors-x86_64.AppImage && chmod +x DesktopEditors-x86_64.AppImage;
