@@ -58,27 +58,26 @@ echo 'Installing Telegram Desktop'
 wget https://telegram.org/dl/desktop/linux && mv linux telegram.xz;
 
 #Codium
+echo 'Installing VsCodium'
 
 sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg;
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h" | sudo tee -a /etc/yum.repos.d/vscodium.repo;
 sudo dnf install -y codium;
 
 #OnlyOffice
-
+echo 'Downloading Onlyoffice'
 wget https://github.com/ONLYOFFICE/appimage-desktopeditors/releases/download/v7.3.3/DesktopEditors-x86_64.AppImage && chmod +x DesktopEditors-x86_64.AppImage;
 
-
-#Email_Client
-wget https://updates.getmailspring.com/download?platform=linuxRpm && mv download?platform=linuxRpm mailspring.rpm;
-sudo rpm -i mailspring.rpm;
-
 #Obsidian
+echo 'Getting Obsidian for ya'
 wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Obsidian-1.2.8.AppImage && sudo chmod +x Obsidian-1.2.8.AppImage;
 
 #Alacritty
+echo 'Downloading the Best terminal alacritty' 
 sudo dnf install -y alacritty;
 
 #Fetch
+echo 'Wanna fetch i gotchu Installing fastfetch'
 sudo dnf install -y fastfetch;
 
 #QEMU
@@ -98,12 +97,8 @@ echo 'Installing Spotiy'
 sudo flatpak install flathub com.spotify.Client
 
 #small_apps
-
+echo 'Installing few handy apps'
 sudo dnf install -y okular mpv;
-
-#Gaming
-#Steam
-sudo dnf install -y steam;
 
 #auto-cpufreq
 echo 'Enabling auto-cpufreq to save your battery'
