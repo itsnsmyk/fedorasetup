@@ -51,10 +51,6 @@ sudo dnf groupupdate multimedia sound-and-video;
 sudo dnf install rpmfusion-nonfree-release-tainted
 sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
-#AMDGPU MESA
-#echo 'Latest Mesa by xxmitsu copr'
-#dnf copr enable xxmitsu/mesa-git
-
 #Dragora
 
 sudo dnf install dnfdragora;
@@ -118,13 +114,6 @@ git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq/ && sudo ./auto-cpufreq-installer
 sudo auto-cpufreq --install
 
-cd ..
-
-#Protonup-qt
-
-git clone https://github.com/DavidoTek/ProtonUp-Qt.git && cd ProtonUp-Qt/ 
-pip3 install -r ./requirements.txt ;
-python3 -m pupgui2;
 
 
 
