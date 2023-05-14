@@ -44,9 +44,6 @@ echo 'Installing Necessary Codecs'
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing;
 sudo dnf groupupdate multimedia sound-and-video;
 
-#For_Intel
-#sudo dnf install libva-intel-driver
-
 #Tainted_Codecs
 sudo dnf install rpmfusion-nonfree-release-tainted
 sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
