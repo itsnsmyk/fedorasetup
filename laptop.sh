@@ -51,6 +51,10 @@ sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 sudo dnf install -y dnfdragora;
 
+#Flatseal
+echo 'Installing Flatseal'
+sudo dnf install -y flatseal;
+
 #Tg
 
 echo 'Installing Telegram Desktop'
