@@ -97,6 +97,9 @@ flatpak install flathub io.github.hrkfdn.ncspot;
 echo 'Installing Spotiy'
 sudo flatpak install flathub com.spotify.Client
 
+#corectrl
+sudo dnf install corecctrl;
+
 #small_apps
 
 sudo dnf install -y okular mpv;
