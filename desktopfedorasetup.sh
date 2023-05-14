@@ -98,6 +98,7 @@ sudo flatpak install flathub com.spotify.Client
 #small_apps
 echo 'Installing few handy apps'
 sudo dnf install -y okular mpv;
+sudo dnf install -y gnome-tweaks;
 
 #corectrl
 echo 'Installing CoreCtrl'
