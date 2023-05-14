@@ -48,15 +48,17 @@ sudo dnf install -y rpmfusion-nonfree-release-tainted
 sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 #Dragora
-
 sudo dnf install -y dnfdragora;
 
 #Flatseal
 echo 'Installing Flatseal'
 sudo dnf install -y flatseal;
 
-#Tg
+#Gnome_Extension
+echo 'Installing Gnome-Extension-Manager'
+flatpak install flathub com.mattjakeman.ExtensionManager;
 
+#Tg
 echo 'Installing Telegram Desktop'
 wget https://telegram.org/dl/desktop/linux && mv linux telegram.xz;
 
