@@ -13,7 +13,7 @@ echo 'Making some necessary changes in dnf config'
 sudo cp -a dnf.conf /etc/dnf/dnf.conf
 
 #best_speed_mirrors
-echo 'Best mirrors fr'
+echo 'Setting up the Best mirrors fr'
 
 sudo cp -a fedora.repo /etc/yum.repos.d/fedora.repo
 sudo cp -a fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo
