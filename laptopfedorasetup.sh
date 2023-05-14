@@ -4,9 +4,9 @@ echo 'Welcome to Fedora Setup made by NSM'
 echo 'Now we will install all the necessary dnf things for setting up Fedora'
 
 #axel_git
-sudo dnf install axel
-sudo dnf install python3
-sudo dnf install python3-pip
+sudo dnf install -y axel
+sudo dnf install -y python3
+sudo dnf install -y python3-pip
 
 #dnfconfig
 
@@ -23,7 +23,7 @@ sudo cp -a fedora-updates.repo /etc/yum.repos.d/fedora-updates.repo
 sudo cp -a config /etc/selinux/config
 
 #fedora3rdparty
-sudo dnf install fedora-workstation-repositories
+sudo dnf install -y fedora-workstation-repositories
 
 #update
 
@@ -35,7 +35,7 @@ sudo dnf --refresh upgrade;
 
 echo 'Installing free & nonfree rpmfusion'
 
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 #Codecs
 
@@ -45,12 +45,12 @@ sudo dnf swap ffmpeg-free ffmpeg --allowerasing;
 sudo dnf groupupdate multimedia sound-and-video;
 
 #Tainted_Codecs
-sudo dnf install rpmfusion-nonfree-release-tainted
+sudo dnf install -y rpmfusion-nonfree-release-tainted
 sudo dnf --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 #Dragora
 
-sudo dnf install dnfdragora;
+sudo dnf install -y dnfdragora;
 
 #Tg
 
@@ -79,7 +79,7 @@ wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.2.8/Ob
 sudo dnf install -y alacritty;
 
 #Fetch
-sudo dnf install fastfetch;
+sudo dnf install -y fastfetch;
 
 #QEMU
 
@@ -103,7 +103,7 @@ sudo dnf install -y okular mpv;
 
 #Gaming
 #Steam
-sudo dnf install steam;
+sudo dnf install -y steam;
 
 #auto-cpufreq
 echo 'Enabling auto-cpufreq to save your battery'
