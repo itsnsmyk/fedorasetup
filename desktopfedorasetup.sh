@@ -104,6 +104,6 @@ sudo dnf install -y gnome-tweaks;
 echo 'Installing CoreCtrl'
 sudo dnf install corectrl;
 
-
+sync;
 
 
